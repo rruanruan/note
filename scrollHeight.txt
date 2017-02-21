@@ -1,11 +1,11 @@
-scrollHeight: ENTIRE  content & padding (visible or not)
-              ÄÚÈİ+padding(ÄÚÈİ³¬³ö×ÔÉíÊ±)  ×ÔÉí+padding(ÄÚÈİ²»³¬¹ı×ÔÉíÊ±´ËÊ±=clientHeight)
+ï»¿scrollHeight: ENTIRE  content & padding (visible or not)
+              å†…å®¹+padding(å†…å®¹è¶…å‡ºè‡ªèº«æ—¶)  è‡ªèº«+padding(å†…å®¹ä¸è¶…è¿‡è‡ªèº«æ—¶æ­¤æ—¶=clientHeight)
 Height of all content + paddings, despite of height of the element.
 
 clientHeight: VISIBLE content & padding
-	      ×ÔÉí+padding
+	      è‡ªèº«+padding
 Only visible height: content portion limited by explicitly defined height of the element.
 
 offsetHeight: VISIBLE content & padding + border + scrollbar
-	      ×ÔÉí+padding+border+¹ö¶¯Ìõ
+	      è‡ªèº«+padding+border+æ»šåŠ¨æ¡
 Height occupied by the element on document.
