@@ -1,0 +1,11 @@
+scrollHeight: ENTIRE  content & padding (visible or not)
+              内容+padding(内容超出自身时)  自身+padding(内容不超过自身时此时=clientHeight)
+Height of all content + paddings, despite of height of the element.
+
+clientHeight: VISIBLE content & padding
+	      自身+padding
+Only visible height: content portion limited by explicitly defined height of the element.
+
+offsetHeight: VISIBLE content & padding + border + scrollbar
+	      自身+padding+border+滚动条
+Height occupied by the element on document.
