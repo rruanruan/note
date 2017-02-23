@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>类式继承</title>
+	<script>
+		window.onload = function(){
+			function A(){
+
+			}
+			function B(){
+
+			}
+										//console.log(A.prototype == B.prototype);false
+										//B.prototype = A.prototype;
+										//console.log(A.prototype == B.prototype);true//对象之间赋址.
+			var a = new A;
+			B.prototype = a;
+										//console.log(a == B.prototype);true
+										//console.log(a == A.prototype);false//a是A的实例化对象.自然不等.
+			console.log(A.prototype == B.prototype);//这里证实达到了改变B.prototype不影响A.prototype的目的.
+			B.prototype.say = function(){//改变B.prototype看会对谁造成影响
+				console.log('a');
+			}
+			console.dir(new A);//这里A新构造出的对象没有say方法.A.prototype不受影响
+			console.dir(a);//旧的对象由于赋址.改变B.prototype时被改变.有了say方法.
+//----------类式继承(1)------子类原型指向父类对象------------
+
+			console.dir(a.constructor);//a是A的实例化对象.所以a的constructor指向A
+			console.dir(B.prototype.constructor);//B.prototype相当于a.所以指向A.这里需后面改正为B
+			B.prototype.constructor = B;//将B的constructor改回为B
+			console.dir(B.prototype.constructor);
+//----------类式继承(2)-------修正constructor---------------			
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
