@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this指向</title>
+
+</head>
+<body>
+	<script>
+		document.onclick = function(){
+			/*var*/ fn = function(){
+				console.log(this);
+				click();
+			}
+			fn();//相当于window.fn();
+			
+		}
+		function click(){
+			console.log(this);
+		}
+		console.log(window.fn);//undfined;
+
+
+		window.fullname = 'global'; //全局
+		var obj = {        
+			fullname: 'local',
+			prop: {
+				fullname: 'local-local',
+				getFullname: function() {
+					console.log(this.fullname) ;
+				}
+			} 
+		};
+		obj.prop.getFullname(); 
+		var test = obj.prop.getFullname;
+		test();
+		setTimeout(obj.prop.getFullname,1000);
+	</script>
+</body>
+</html>
